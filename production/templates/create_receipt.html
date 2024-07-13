@@ -1,0 +1,131 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Create Receipt</title>
+    
+</head>
+<body>
+    <h1>Create Receipt</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Receipt</title>
+    <style>
+
+
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* Replace 'background.jpg' with your image path */
+            background-size: cover;
+            background-position: center;
+            background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+            box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+            background-repeat: no-repeat;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%; /* Adjust as needed */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as desired */
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        form input[type="text"], form input[type="number"], form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% comment %} <h1>Create Receipt</h1>
+        <form method="post" action="https://docs.google.com/forms/d/1F4FOfNY0aZ_K-gGlqEubrMzBiGHqtKL2U6SY6IdS4i8/edit">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form> {% endcomment %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <label for="process_order_number">Process Order Number</label>
+            <input type="number" id="process_order_number" name="process_order_number">
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date">
+
+           
+            <label for="batch_number">Batch Number</label>
+            <input type="text" id="batch_number" name="batch_number">
+
+            <label for="process_order_qty">Process Order Qty</label>
+            <input type="number" id="process_order_qty" name="process_order_qty">
+
+            <label for="bin_number">Bin Number</label>
+            <input type="text" id="bin_number" name="bin_number">
+
+            <label for="pallet_qty">Pallet Qty</label>
+            <input type="number" id="pallet_qty" name="pallet_qty">
+
+            <label for="transfer_order_number">Transfer Order Number</label>
+            <input type="text" id="transfer_order_number" name="transfer_order_number">
+
+            <label for="status">Status</label>
+            <input type="text" id="status" name="status">
+
+            <label for="capacity">Capacity</label>
+            <input type="number" id="capacity" name="capacity" step="0.01">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

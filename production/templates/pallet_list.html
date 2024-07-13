@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pallet List</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: url('https://images.unsplash.com/photo-1531131144594-62287cc2e329') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr{
+            background-color: grey;
+        }
+        tr:hover {
+            background-color:black;
+        }
+        @media (max-width: 600px) {
+            table, th, td {
+                display: block;
+                width: 100%;
+            }
+            th, td {
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Pallet List</h1>
+    <table>
+        <tr>
+            <th>Production Line</th>
+            <th>Process Order #</th>
+            <th>Date</th>
+            <th>SKU Code</th>
+            <th>Batch #</th>
+            <th>Process Order Qty</th>
+            <th>Bin #</th>
+            <th>Pallet Qty</th>
+            <th>Transfer Order #</th>
+            <th>Status</th>
+        </tr>
+        {% for pallet in pallets %}
+        <tr>
+            <td>{{ pallet.production_line.name }}</td>
+            <td>{{ pallet.process_order_number }}</td>
+            <td>{{ pallet.date }}</td>
+            <td>{{ pallet.sku_code.sku_code }}</td>
+            <td>{{ pallet.batch_number }}</td>
+            <td>{{ pallet.process_order_qty }}</td>
+            <td>{{ pallet.bin_number }}</td>
+            <td>{{ pallet.pallet_qty }}</td>
+            <td>{{ pallet.transfer_order_number }}</td>
+            <td>{{ pallet.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
